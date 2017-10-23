@@ -10,7 +10,8 @@ import { ApplicationState } from 'app/store/applicaton-state';
 export class MessageSectionComponent implements OnInit {
 
   constructor(private store: Store<ApplicationState>) {
-    this.store.subscribe(state => console.log('message section received state',state));
+    this.store.subscribe(state =>
+      console.log('message section received state',state));
 
    }
 

@@ -25,7 +25,7 @@ export function storeReducer(state: ApplicationState,action:Action): Application
 
 }
 
-function handleLoadUserThreadsAction(state: ApplicationState,
+function handleLoadUserThreadsAction(state: ApplicationState=INITIAL_APPLICATION_STATE,
   action:LoadUserThreadsAction):ApplicationState {
   const userData = action.payload;
   const newState:ApplicationState = Object.assign({},state);
@@ -50,7 +50,7 @@ function handleLoadUserThreadsAction(state: ApplicationState,
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore(storeReducer,INITIAL_APPLICATION_STATE)
+    StoreModule.provideStore(storeReducer)
   ],
   providers: [ThreadsService],
   bootstrap: [AppComponent]
